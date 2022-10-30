@@ -5,13 +5,13 @@ import 'SignUp.dart';
 import 'homescreen.dart';
 import 'me.dart';
 
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Hackathon',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: WelcomeScreen(),
@@ -35,16 +35,10 @@ class WelcomeScreen extends StatelessWidget {
           },
         ),
       ),
-
     );
   }
 }
 
 void _navigateToNextScreen(BuildContext context) {
-  Navigator.of(context).push(
-      MaterialPageRoute(builder: (context) =>  SignIn()));
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignIn()));
 }
-
-
-
-
