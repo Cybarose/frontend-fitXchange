@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'homescreen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
@@ -14,7 +15,7 @@ class SignIn extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: NetworkImage(
-                'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80'),
+                'https://images.unsplash.com/photo-1617957743103-310accdfb999?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80'),
             fit: BoxFit.cover,
           ),
         ),
@@ -102,7 +103,7 @@ class SignIn extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0)
                         ),
-                         primary: Color.fromRGBO(94, 50, 168, 1)
+                         primary: Color.fromRGBO(0, 50, 101, 1)
                         ),
                   child:const Text(
                               "Login",
@@ -125,5 +126,5 @@ class SignIn extends StatelessWidget {
 
 
 void _navigateToNextScreen(BuildContext context) {
-  Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyApp()));
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => homescreenView()));
 }

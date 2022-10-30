@@ -32,7 +32,7 @@ class WelcomeScreen extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: NetworkImage(
-                'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80'),
+                'https://images.unsplash.com/photo-1617957743103-310accdfb999?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80'),
             fit: BoxFit.cover,
           ),
         ),
@@ -42,7 +42,7 @@ class WelcomeScreen extends StatelessWidget {
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
             child: Container(
-              height: 200,
+              height: 250,
               width: 350,
               decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.3),
@@ -54,7 +54,7 @@ class WelcomeScreen extends StatelessWidget {
                 Container(
                   margin: const EdgeInsets.only(top: 30),
                   child: const Text(
-                    'Welcome to fitXchange',
+                    'Welcome to',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: Color.fromRGBO(255, 255, 255, 1),
@@ -69,14 +69,14 @@ class WelcomeScreen extends StatelessWidget {
                 
                 
                 Container(
-                  margin: const EdgeInsets.fromLTRB(30, 30, 30, 0),
+                  margin: const EdgeInsets.fromLTRB(30, 80, 30, 0),
                   child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
                         shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0)
                         ),
-                         primary: Color.fromRGBO(94, 50, 168, 1)
+                         primary: Color.fromRGBO(0, 50, 101, 1)
                         ),
                   child:const Text(
                               "Sign in",
@@ -111,7 +111,7 @@ class WelcomeScreen extends StatelessWidget {
 }
 
 void _navigateToNextScreenLogin(BuildContext context) {
-  Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignIn()));
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => User()));
 }
 
 void _navigateToNextScreenRegister(BuildContext context) {
