@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
 import 'package:hackathon_hs/main.dart';
 
-class SignIn extends StatelessWidget {
+class anmelden extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,7 +99,7 @@ class SignIn extends StatelessWidget {
                   margin: const EdgeInsets.fromLTRB(30, 25, 30, 0),
                   child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 10.0),
                         shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0)
                         ),

@@ -5,6 +5,7 @@ import 'SignUp.dart';
 import 'homescreen.dart';
 import 'me.dart';
 import 'dart:ui';
+import 'freigabe.dart';
 
 void main() => runApp(MyApp());
 
@@ -72,7 +73,7 @@ class WelcomeScreen extends StatelessWidget {
                   margin: const EdgeInsets.fromLTRB(30, 80, 30, 0),
                   child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 10.0),
                         shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0)
                         ),
@@ -111,7 +112,7 @@ class WelcomeScreen extends StatelessWidget {
 }
 
 void _navigateToNextScreenLogin(BuildContext context) {
-  Navigator.of(context).push(MaterialPageRoute(builder: (context) => User()));
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => anmelden()));
 }
 
 void _navigateToNextScreenRegister(BuildContext context) {

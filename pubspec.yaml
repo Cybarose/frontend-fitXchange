@@ -62,17 +62,22 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
 
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
+
+  # add this
   assets:
-     - assets/images/
-    # - assets/videos/
-    # - assets/audios/
-    # - assets/lottie_animations/
-    # - assets/rive_animations/
-    # - assets/pdfs/
+    - assets/images/logo.png
+    - assets/images/avatar.png
+    - assets/images/aikido.jpg
+    - assets/images/badmington.jpg
+    - assets/images/basketball.jpg
+    - assets/images/cricket.jpg
+    - assets/images/klättern.jpg
+    - assets/images/rennen.jpg
+    - assets/images/smol_logo.jpeg
+    - assets/images/swimming.jpg
+    - assets/images/tick.png
+    - assets/images/yoga.jpeg
 
   # To add assets to your application, add an assets section, like this:
   # assets:

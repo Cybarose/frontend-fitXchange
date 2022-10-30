@@ -1,6 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:hackathon_hs/schwimmenkurs.dart';
+
+import 'badmintonkurs.dart';
+import 'me.dart';
 
 class homescreenView extends StatelessWidget {
   @override
@@ -22,21 +26,33 @@ class homescreenView extends StatelessWidget {
 
                children: [
                  Container(
-                     padding: EdgeInsets.all(40),
+                     padding: const EdgeInsets.all(40),
                      margin: const EdgeInsets.only(top: 0),
-                     child: Text('Filter', textAlign: TextAlign.center,
+                     child: const Text('Filter', textAlign: TextAlign.center,
                          style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 0, 50, 101)),)),
                  Container(
-                     padding: EdgeInsets.all(40),
+                     padding: const  EdgeInsets.all(40),
                      margin: const EdgeInsets.only(top: 0),
-                     child: Text('Suchen', textAlign: TextAlign.center,
+                     child: const Text('Suchen', textAlign: TextAlign.center,
                        style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 0, 50, 101)),)),
                  Container(
-                     padding: EdgeInsets.all(30),
+                     padding: const EdgeInsets.all(30),
                      margin: const EdgeInsets.only(top: 0),
                      width: 80,
-                     child: Image.asset('assets/images/avatar.png')),
-               ],
+                   child: InkWell(
+                     onTap: () {
+                       _navigateToNextScreenMe(context);
+                     },
+                     child: const  CircleAvatar(
+                       backgroundColor: Colors.black,
+                       child: Icon(Icons.person,
+                           size: 25,
+                           color: Colors.white
+                       ),
+                     ),
+                   ),
+                     //child: Image.asset('assets/images/avatar.png')),
+                 )],
              ),
 
               //Second Row
@@ -48,7 +64,11 @@ class homescreenView extends StatelessWidget {
                         padding: const EdgeInsets.all(10),
                         margin: const EdgeInsets.only(top: 10),
                         width: 150,
-                        child: Image.asset('assets/images/badmington.jpg')),
+                        child: InkWell(
+                            onTap: () {
+                              _navigateToNextScreenBadminton(context);
+                            },
+                        child: Image.asset('assets/images/badmington.jpg'))),
                     Container(
                         padding: const EdgeInsets.all(10),
                         width: 150,
@@ -83,7 +103,11 @@ class homescreenView extends StatelessWidget {
                         padding: const EdgeInsets.all(10),
                         width: 150,
                         margin: const EdgeInsets.only(top: 10),
-                        child: Image.asset('assets/images/swimming.jpg')),
+                        child: InkWell(
+                        onTap: () {
+                              _navigateToNextScreenSchwimmen(context);
+                        },
+                        child: Image.asset('assets/images/swimming.jpg'))),
                   ],
                 ),
               ),
@@ -176,4 +200,17 @@ class homescreenView extends StatelessWidget {
     ),
     );
     }
+}
+
+
+void _navigateToNextScreenBadminton(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => badminton()));
+}
+
+void _navigateToNextScreenSchwimmen(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => schwimmen()));
+}
+
+void _navigateToNextScreenMe(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => User()));
 }
