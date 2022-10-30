@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hackathon_hs/qrscanner.dart';
+import 'package:hackathon_hs/views/test_page.dart';
 import 'SignIn.dart';
 import 'SignUp.dart';
 import 'homescreen.dart';
@@ -36,7 +37,6 @@ class WelcomeScreen extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        
         child: ClipRRect(
           borderRadius: BorderRadius.circular(25),
           child: BackdropFilter(
@@ -47,9 +47,7 @@ class WelcomeScreen extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.3),
                   borderRadius: BorderRadius.circular(25),
-                  border: Border.all(width: 1, color: Colors.white)
-                  ),
-
+                  border: Border.all(width: 1, color: Colors.white)),
               child: Column(children: [
                 Container(
                   margin: const EdgeInsets.only(top: 30),
@@ -66,41 +64,33 @@ class WelcomeScreen extends StatelessWidget {
                         height: 1),
                   ),
                 ),
-                
-                
                 Container(
                   margin: const EdgeInsets.fromLTRB(30, 80, 30, 0),
                   child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+                    style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 40.0, vertical: 20.0),
                         shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0)
-                        ),
-                         primary: Color.fromRGBO(0, 50, 101, 1)
-                        ),
-                  child:const Text(
-                              "Sign in",
-                              style: TextStyle(color: Colors.white, fontSize: 18),
-                              ),
-
-                     onPressed: () {
-                    _navigateToNextScreenLogin(context);
+                            borderRadius: BorderRadius.circular(10.0)),
+                        primary: Color.fromRGBO(0, 50, 101, 1)),
+                    child: const Text(
+                      "Sign in",
+                      style: TextStyle(color: Colors.white, fontSize: 18),
+                    ),
+                    onPressed: () {
+                      _navigateToNextScreenLogin(context);
                     },
                   ),
                 ),
-
-                
                 Container(
                   margin: const EdgeInsets.only(top: 20),
                   child: InkWell(
-                  onTap: () {
-                  _navigateToNextScreenRegister(context);
-                  },
-                  child: new Text("Noch kein Account? Sign up here"),
+                    onTap: () {
+                      _navigateToNextScreenRegister(context);
+                    },
+                    child: new Text("Noch kein Account? Sign up here"),
                   ),
                 ),
-
-
               ]),
             ),
           ),
@@ -111,7 +101,7 @@ class WelcomeScreen extends StatelessWidget {
 }
 
 void _navigateToNextScreenLogin(BuildContext context) {
-  Navigator.of(context).push(MaterialPageRoute(builder: (context) => User()));
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignIn()));
 }
 
 void _navigateToNextScreenRegister(BuildContext context) {
