@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
+import 'package:hackathon_hs/main.dart';
 
 class SignIn extends StatelessWidget {
   @override
@@ -70,8 +71,10 @@ class SignIn extends StatelessWidget {
                 Container(
                   margin: const EdgeInsets.fromLTRB(30, 20, 30, 0),
                   child: TextField(
+                    obscureText: true,
                     decoration: InputDecoration(
                       //border: OutlineInputBorder(),
+                      
                       isDense: true,
                       filled: true,
                       fillColor: Color.fromRGBO(238, 255, 255, 1),
@@ -84,6 +87,33 @@ class SignIn extends StatelessWidget {
                     ),
                   ),
                 ),
+                Container(
+                  margin: const EdgeInsets.fromLTRB(30, 20, 30, 0),
+                    child: const Text(
+                    'Passwort vergessen?',
+                     style: TextStyle(fontSize: 15.0),
+                    ),
+                ),
+                Container(
+                  margin: const EdgeInsets.fromLTRB(30, 25, 30, 0),
+                  child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+                        shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0)
+                        ),
+                         primary: Color.fromRGBO(94, 50, 168, 1)
+                        ),
+                  child:const Text(
+                              "Login",
+                              style: TextStyle(color: Colors.white, fontSize: 18),
+                              ),
+
+                     onPressed: () {
+                    _navigateToNextScreen(context);
+                    },
+                  ),
+                ),
               ]),
             ),
           ),
@@ -91,4 +121,9 @@ class SignIn extends StatelessWidget {
       ),
     );
   }
+}
+
+
+void _navigateToNextScreen(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyApp()));
 }
